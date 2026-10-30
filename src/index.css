@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink font-sans text-slate-200 antialiased;
+}
+
+::selection {
+  background: rgba(85, 184, 200, 0.35);
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-ice via-ice-light to-sky-200 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply rounded-2xl border border-ice/10 bg-slate-card/70 backdrop-blur-md;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-ice to-ice-light px-6 py-3 text-sm font-semibold text-[#10151B] shadow-lg shadow-cyan-500/20 transition hover:brightness-110;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-ice/60 hover:bg-white/5;
+  }
+
+  .tag {
+    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #55B8C8;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
